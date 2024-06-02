@@ -1,0 +1,31 @@
+diff --git a/build/boards/cv181x/cv1812cp_milkv_duo256m_sd/memmap.py b/build/boards/cv181x/cv1812cp_milkv_duo256m_sd/memmap.py
+index fcc097d01..545af061c 100755
+--- a/build/boards/cv181x/cv1812cp_milkv_duo256m_sd/memmap.py
++++ b/build/boards/cv181x/cv1812cp_milkv_duo256m_sd/memmap.py
+@@ -40,10 +40,10 @@ class MemoryMap:
+     # =================
+     # Multimedia buffer. Used by u-boot/kernel/FreeRTOS
+     # =================
+-    ION_SIZE = 75 * SIZE_1M
+-    H26X_BITSTREAM_SIZE = 2 * SIZE_1M
++    ION_SIZE = 0 * SIZE_1M
++    H26X_BITSTREAM_SIZE = 0 * SIZE_1M
+     H26X_ENC_BUFF_SIZE = 0
+-    ISP_MEM_BASE_SIZE = 20 * SIZE_1M
++    ISP_MEM_BASE_SIZE = 0 * SIZE_1M
+     FREERTOS_RESERVED_ION_SIZE = H26X_BITSTREAM_SIZE + H26X_ENC_BUFF_SIZE + ISP_MEM_BASE_SIZE
+ 
+     # ION after FreeRTOS
+diff --git a/ramdisk/rootfs/overlay/cv181x_musl_riscv64/system/ko/loadsystemko.sh b/ramdisk/rootfs/overlay/cv181x_musl_riscv64/system/ko/loadsystemko.sh
+index b07a47db8..a539510d1 100644
+--- a/ramdisk/rootfs/overlay/cv181x_musl_riscv64/system/ko/loadsystemko.sh
++++ b/ramdisk/rootfs/overlay/cv181x_musl_riscv64/system/ko/loadsystemko.sh
+@@ -24,7 +24,7 @@ insmod /mnt/system/ko/cv181x_vcodec.ko
+ insmod /mnt/system/ko/cv181x_jpeg.ko
+ insmod /mnt/system/ko/cvi_vc_driver.ko MaxVencChnNum=9 MaxVdecChnNum=9
+ #insmod /mnt/system/ko/cv181x_rtc.ko
+-insmod /mnt/system/ko/cv181x_ive.ko
++#insmod /mnt/system/ko/cv181x_ive.ko
+ 
+ echo 3 > /proc/sys/vm/drop_caches
+ dmesg -n 4

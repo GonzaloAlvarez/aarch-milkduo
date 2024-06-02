@@ -1,0 +1,17 @@
+diff --git a/device/common/br_overlay/etc/init.d/S99user b/device/common/br_overlay/etc/init.d/S99user
+index 32b524845..ca32da658 100755
+--- a/device/common/br_overlay/etc/init.d/S99user
++++ b/device/common/br_overlay/etc/init.d/S99user
+@@ -19,11 +19,7 @@ case "$1" in
+                 . $SYSTEMPATH/duo-init.sh &
+         fi
+ 
+-        if [ -f $SYSTEMPATH/blink.sh ]; then
+-                . $SYSTEMPATH/blink.sh &
+-        fi
+-
+-	if [ -f $SYSTEMPATH/usb.sh ]; then
++	    if [ -f $SYSTEMPATH/usb.sh ]; then
+                 . $SYSTEMPATH/usb.sh &
+         fi
+ 
