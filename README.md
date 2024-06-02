@@ -23,9 +23,9 @@ https://community.milkv.io/t/m1-arm64-debian11-uos-v20/255
 - [x] Compile Toolchain on Apple M1
 - [x] Use compiled toolchain to sucessfully build the Duo SDK
 - [x] QEmu works and launches the built image
+- [x] Compile gen_init_cpio and mkimage natively
 - [ ] Support something other than the Duo 256M
 - [ ] Make a Dockerfile to build without neededing a QEMU host
-- [ ] Compile gen_init_cpio and mkimage natively
 
 
 ## Getting started
